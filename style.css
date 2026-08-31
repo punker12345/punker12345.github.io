@@ -1,0 +1,357 @@
+/* ==========================================================================
+   Personal academic website — single stylesheet
+   Plain CSS, no build step. Restrained, text-forward, book-like.
+   Edit the tokens in :root below.
+   ========================================================================== */
+
+:root {
+  --max-width: 43.75rem;            /* ~700px content measure */
+  --color-bg: #ffffff;
+  --color-text: #1c1b1a;
+  --color-muted: #605c58;
+  --color-border: #e6e3df;
+  --color-accent: #7a1f2b;          /* single accent — deep maroon */
+  --color-accent-hover: #571017;
+  --font-serif: "Source Serif 4", Georgia, "Times New Roman", Times, serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #17181a;
+    --color-text: #e7e4e0;
+    --color-muted: #a29d97;
+    --color-border: #33353a;
+    --color-accent: #e08e99;
+    --color-accent-hover: #f0aab3;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  line-height: 1.75;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "onum" 1, "kern" 1;
+}
+
+/* ---- Layout ------------------------------------------------------------- */
+
+.site-header,
+.site-main,
+.site-footer {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+.site-main {
+  padding-block: 3rem 5rem;
+}
+
+/* ---- Header / navigation ------------------------------------------------ */
+
+.site-header {
+  padding-block: 2.5rem 1.25rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.site-title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.site-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-tagline {
+  margin: 0.25rem 0 1.25rem;
+  font-family: var(--font-sans);
+  color: var(--color-muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.site-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--font-sans);
+}
+
+.site-nav a {
+  color: var(--color-muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding-block: 0.2rem;
+  border-bottom: 2px solid transparent;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  color: var(--color-text);
+}
+
+.site-nav a[aria-current="page"] {
+  color: var(--color-text);
+  border-bottom-color: var(--color-accent);
+}
+
+/* ---- Typography ------------------------------------------------------------*/
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-serif);
+  line-height: 1.25;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 1.95rem;
+  margin: 0 0 1.5rem;
+}
+
+h2 {
+  font-size: 1.35rem;
+  margin: 3rem 0 0.85rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+  margin: 1.75rem 0 0.4rem;
+}
+
+p {
+  margin: 0 0 1.15rem;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--color-accent-hover);
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--color-border);
+  margin: 3rem 0;
+}
+
+.lead {
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
+
+.muted {
+  color: var(--color-muted);
+}
+
+/* Small print — captions, dates, secondary links */
+.meta {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+/* ---- Home intro ---------------------------------------------------------- */
+
+.intro {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.intro img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 2px;
+  border: 1px solid var(--color-border);
+  flex-shrink: 0;
+}
+
+.intro-body {
+  flex: 1 1 17rem;
+}
+
+/* ---- Prose lists (talks, courses, etc.) ------------------------------------*/
+
+.entry-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.entry-list > li {
+  padding: 1.1rem 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.entry-list > li:first-child {
+  border-top: 0;
+}
+
+.entry-list .entry-title {
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   PUBLICATIONS
+   Each publication is one <li class="pub"> holding a citation in running
+   text plus an optional row of links. To add one, copy a whole <li> block,
+   edit the citation, and delete any <a> you do not need.
+   ========================================================================== */
+
+.pub-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.pub-list .pub {
+  margin: 0 0 1.5rem;
+  padding-left: 1.5rem;      /* hanging indent, bibliography style */
+  text-indent: -1.5rem;
+}
+
+.pub-list .pub:last-child {
+  margin-bottom: 0;
+}
+
+.pub-cite {
+  /* runs as normal text; <em> for titles of journals/books */
+}
+
+.pub-links {
+  text-indent: 0;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+}
+
+.pub-links a {
+  white-space: nowrap;
+}
+
+.pub-links a + a {
+  margin-left: 0.9rem;
+}
+
+/* ---- CV ------------------------------------------------------------------ */
+
+.cv-entry {
+  display: grid;
+  grid-template-columns: 6.5rem 1fr;
+  gap: 0.2rem 1.5rem;
+  padding: 0.7rem 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.cv-entry:first-of-type {
+  border-top: 0;
+}
+
+.cv-entry .cv-date {
+  font-family: var(--font-sans);
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+  padding-top: 0.15rem;
+}
+
+.cv-entry .cv-detail p {
+  margin: 0 0 0.3rem;
+}
+
+.cv-entry .cv-detail p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 32rem) {
+  .cv-entry {
+    grid-template-columns: 1fr;
+    gap: 0.1rem;
+  }
+}
+
+/* ---- Contact ----------------------------------------------------------------*/
+
+.contact-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.contact-table th,
+.contact-table td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.55rem 1rem 0.55rem 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.contact-table th {
+  width: 7.5rem;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  padding-top: 0.7rem;
+}
+
+.contact-table tr:first-child th,
+.contact-table tr:first-child td {
+  border-top: 0;
+}
+
+/* ---- Footer ----------------------------------------------------------------*/
+
+.site-footer {
+  padding-block: 1.5rem 3rem;
+  border-top: 1px solid var(--color-border);
+  font-family: var(--font-sans);
+  color: var(--color-muted);
+  font-size: 0.85rem;
+}
+
+/* ---- Utilities --------------------------------------------------------------*/
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  background: var(--color-bg);
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--color-accent);
+  z-index: 10;
+}
