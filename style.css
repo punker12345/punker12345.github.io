@@ -280,6 +280,17 @@ hr {
 
 /* ---- CV ------------------------------------------------------------------ */
 
+/* The CV page embeds assets/cv.pdf in the browser's own PDF viewer, which
+   supplies its own zoom and download controls. */
+.cv-pdf {
+  display: block;
+  width: 100%;
+  height: 85vh;
+  min-height: 32rem;
+  border: 1px solid var(--color-border);
+  border-radius: 2px;
+}
+
 .cv-entry {
   display: grid;
   grid-template-columns: 6.5rem 1fr;

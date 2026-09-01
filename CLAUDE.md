@@ -21,7 +21,7 @@ City University of Hong Kong, working on AI governance and public policy.
 | `index.html` | Home / About |
 | `research.html` | Publications — articles, books, presentations |
 | `teaching.html` | Teaching |
-| `cv.html` | CV (links `assets/cv.pdf`) |
+| `cv.html` | CV (embeds `assets/cv.pdf` in the browser PDF viewer) |
 | `contact.html` | Contact |
 | `style.css` | The single shared stylesheet |
 | `assets/` | `portrait.jpg`, `cv.pdf`, other static files |
@@ -70,13 +70,16 @@ card grids, background tints, icons, or multi-column feature blocks.
   `padding-inline: 1.5rem` on all three.
 - `.site-main` vertical padding: `3rem` top, `5rem` bottom.
 - Fully responsive with no breakpoints needed for the main column (it just
-  narrows). Two small `max-width` rules exist:
-  - `.cv-entry` grid (`6.5rem` date column + detail) collapses to one column
-    at `32rem`.
-  - Nav wraps naturally via `flex-wrap`.
-- Structural exceptions to "no grids" — both deliberate, both plain:
-  - **CV:** `.cv-entry` is a 2-column CSS grid, date beside detail.
-  - **Contact:** `.contact-table` is a real `<table>`, label beside value.
+  narrows). One small `max-width` rule exists (`.cv-entry` grid collapse at
+  `32rem`); the nav wraps naturally via `flex-wrap`.
+- **CV page:** `cv.html` embeds `assets/cv.pdf` via
+  `<object class="cv-pdf">` (full column width, `85vh` tall) plus a
+  `download` link above it. The browser's PDF viewer supplies zoom and
+  download. The old textual layout used `.cv-entry` — a 2-column CSS grid,
+  date beside detail — whose CSS is kept for reference but is currently
+  unused.
+- Structural exception to "no grids": **Contact** — `.contact-table` is a
+  real `<table>`, label beside value.
 - Header: name as `.site-title` (serif, 1.5rem), `.site-tagline` beneath it,
   then `.site-nav` (a `<ul>` of links). Current page marked with
   `aria-current="page"`, which draws the maroon underline.
@@ -89,8 +92,6 @@ Live in `research.html` under an `<h1>Publications</h1>` (no intro
 paragraphs), grouped into `<h2>` sections — **Journal articles**,
 **Book reviews**, **Edited books**, **Translated books** — each an
 `<ol class="pub-list">`. Entries are newest first within a section.
-**Presentations** below them uses the lighter `.entry-list` pattern
-(title + `.meta` line), not `.pub-list`.
 
 ### Citation format
 
@@ -103,10 +104,12 @@ chapter titles are in curly quotes (`&ldquo;` / `&rdquo;`), not italic.
   `Tao Huang. &ldquo;Article Title.&rdquo; <em>Journal Name</em> 12, no. 3 (2025): 145&ndash;198.`
 - **Co-authored:**
   `Tao Huang and Co-Author Name. &ldquo;Article Title.&rdquo; <em>Journal Name</em> 8, no. 1 (2024): 1&ndash;42.`
-- **Book chapter / edited volume:**
-  `Tao Huang. &ldquo;Chapter Title.&rdquo; In <em>Edited Volume Title</em>, edited by Editor Name, 130&ndash;152. City: University Press, 2025.`
-- **Working paper:**
-  `Tao Huang. &ldquo;Paper Title.&rdquo; Working paper, 2026.`
+- **Book review:**
+  `Tao Huang. Review of <em>Book Title</em>, by Book Author (Publisher, 2022). <em>Journal Name</em> 53 (2023): 1277.`
+- **Edited book:**
+  `Tao Huang and Co-Editor Name, eds. <em>Book Title</em> [Romanized Original Title], vol. 3. City: University Press, 2021. In Chinese.`
+- **Translated chapter:**
+  `Tao Huang, trans. &ldquo;Chapter Title.&rdquo; Chap. 6 in <em>Book Title</em>, edited by Editor Name. Publisher, 2023. Translated into Chinese.`
 
 Use `&ndash;` for page ranges. When only the volume and first page are known
 (common for law reviews cited Bluebook-style), `<em>Journal Name</em> 58
