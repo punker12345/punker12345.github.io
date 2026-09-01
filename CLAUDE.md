@@ -10,9 +10,10 @@ City University of Hong Kong, working on AI governance and public policy.
 - Served by **GitHub Pages from the repository root**, so `index.html` stays in
   the root and all asset paths are relative (`style.css`, `assets/...`).
 - `.nojekyll` is present so Pages serves files as-is.
-- Every page is a complete standalone HTML file. The banner, header, nav, and
-  footer are **copied into each page** — there is no include mechanism. When
-  any of them changes, update all five pages.
+- Every page is a complete standalone HTML file. The header (which carries the
+  banner as a background image), nav, and footer are **copied into each page**
+  — there is no include mechanism. When any of them changes, update all five
+  pages.
 
 ## Files
 
@@ -30,9 +31,9 @@ City University of Hong Kong, working on AI governance and public policy.
 
 The agreed direction: **restrained and text-forward — it should read like a
 well-set book page, not a startup landing page.** Do not add card grids,
-background tints, icons, or multi-column feature blocks. (One decorative
-`.site-banner` image strip sits above the header on every page — added at the
-owner's request; keep it to the single full-bleed image, no text overlay.)
+background tints, icons, or multi-column feature blocks. (One exception, at
+the owner's request: `assets/banner.jpg` is used as a darkened background
+image behind the header text on every page — see Layout constraints.)
 
 ### Typography
 
@@ -84,10 +85,14 @@ owner's request; keep it to the single full-bleed image, no text overlay.)
   unused.
 - Structural exception to "no grids": **Contact** — `.contact-table` is a
   real `<table>`, label beside value.
-- Banner: `<img class="site-banner" src="assets/banner.jpg" alt="">` is the
-  first element in `<body>` after the skip link, before `.site-header`. It is
-  full-bleed (ignores the centred column), `width: 100%`, `max-height: 300px`,
-  `object-fit: cover`. Decorative, so `alt=""`.
+- Banner: `.site-header` has `background-image` = a flat `rgba(14,15,20,.62)`
+  scrim over `url("assets/banner.jpg")`, `background-size: cover`,
+  `background-position: 50% 42%`. Because of the dark scrim the header text is
+  light: `.site-title` `#fff`, `.site-tagline` `rgba(255,255,255,.82)`,
+  `.site-nav a` `rgba(255,255,255,.8)` (hover/current `#fff`), and the
+  `aria-current` underline is the lighter accent `#e08e99` for contrast. There
+  is no separate banner element — the image lives only on the header, so it
+  spans the centred column, not the full viewport.
 - Header: name as `.site-title` (serif, 1.5rem), `.site-tagline` beneath it,
   then `.site-nav` (a `<ul>` of links). Current page marked with
   `aria-current="page"`, which draws the maroon underline.

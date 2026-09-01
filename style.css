@@ -63,24 +63,20 @@ body {
   padding-block: 3rem 5rem;
 }
 
-/* ---- Banner ----------------------------------------------------------------
-   Full-bleed image strip above the header, on every page. Scales to the
-   viewport width; on wide screens the height is capped and the image is
-   cropped from the centre. */
-.site-banner {
-  display: block;
-  width: 100%;
-  max-height: 300px;
-  object-fit: cover;
-  object-position: center;
-  border-bottom: 1px solid var(--color-border);
-}
-
 /* ---- Header / navigation ------------------------------------------------ */
 
+/* The banner: assets/banner.jpg sits behind the header text, darkened by a
+   flat scrim so the (now light) title, tagline, and nav stay readable. */
 .site-header {
   padding-block: 2.5rem 1.25rem;
   border-bottom: 1px solid var(--color-border);
+  background-image:
+    linear-gradient(rgba(14, 15, 20, 0.62), rgba(14, 15, 20, 0.62)),
+    url("assets/banner.jpg");
+  background-size: cover;
+  background-position: 50% 42%;
+  background-repeat: no-repeat;
+  border-radius: 2px;
 }
 
 .site-title {
@@ -88,6 +84,7 @@ body {
   font-size: 1.5rem;
   font-weight: 600;
   letter-spacing: 0.01em;
+  color: #ffffff;
 }
 
 .site-title a {
@@ -98,7 +95,7 @@ body {
 .site-tagline {
   margin: 0.25rem 0 1.25rem;
   font-family: var(--font-sans);
-  color: var(--color-muted);
+  color: rgba(255, 255, 255, 0.82);
   font-size: 0.95rem;
   line-height: 1.5;
 }
@@ -114,7 +111,7 @@ body {
 }
 
 .site-nav a {
-  color: var(--color-muted);
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
   font-size: 0.95rem;
   padding-block: 0.2rem;
@@ -123,12 +120,12 @@ body {
 
 .site-nav a:hover,
 .site-nav a:focus-visible {
-  color: var(--color-text);
+  color: #ffffff;
 }
 
 .site-nav a[aria-current="page"] {
-  color: var(--color-text);
-  border-bottom-color: var(--color-accent);
+  color: #ffffff;
+  border-bottom-color: #e08e99;
 }
 
 /* ---- Typography ------------------------------------------------------------*/
