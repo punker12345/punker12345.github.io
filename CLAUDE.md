@@ -48,8 +48,8 @@ image behind the header text on every page — see Layout constraints.)
   serif throughout for the book feel. Size `1.125rem`, `line-height: 1.75`,
   `font-feature-settings: "onum" 1, "kern" 1` (old-style figures).
 - **Sans-serif (`--font-sans`, system stack)** is used only for secondary
-  furniture: the nav, the tagline under the name, `.meta` lines, CV dates,
-  the contact table labels, and the footer.
+  furniture: the nav, `.meta` lines, CV dates, the contact table labels, and
+  the footer.
 - Heading sizes: `h1` 1.95rem, `h2` 1.35rem (with `3rem` top margin), `h3`
   1.1rem. Heading `line-height: 1.25`.
 - `.lead` is the larger intro paragraph used on most pages: `1.25rem`,
@@ -88,14 +88,14 @@ image behind the header text on every page — see Layout constraints.)
 - Banner: `.site-header` has `background-image` = a flat `rgba(14,15,20,.62)`
   scrim over `url("assets/banner.jpg")`, `background-size: cover`,
   `background-position: 50% 42%`. Because of the dark scrim the header text is
-  light: `.site-title` `#fff`, `.site-tagline` `rgba(255,255,255,.82)`,
-  `.site-nav a` `rgba(255,255,255,.8)` (hover/current `#fff`), and the
-  `aria-current` underline is the lighter accent `#e08e99` for contrast. There
-  is no separate banner element — the image lives only on the header, so it
-  spans the centred column, not the full viewport.
-- Header: name as `.site-title` (serif, 1.5rem), `.site-tagline` beneath it,
-  then `.site-nav` (a `<ul>` of links). Current page marked with
-  `aria-current="page"`, which draws the maroon underline.
+  light: `.site-title` `#fff`, `.site-nav a` `rgba(255,255,255,.8)`
+  (hover/current `#fff`), and the `aria-current` underline is the lighter
+  accent `#e08e99` for contrast. There is no separate banner element — the
+  image lives only on the header, so it spans the centred column, not the full
+  viewport.
+- Header: just the name as `.site-title` (serif, 1.7rem, white, `1.2rem`
+  bottom margin) then `.site-nav` (a `<ul>` of links). No tagline. Current
+  page marked with `aria-current="page"`, which draws the accent underline.
 - Every page has a visually-hidden `.skip-link` to `#main` as the first
   element in `<body>`.
 
