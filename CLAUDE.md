@@ -67,7 +67,7 @@ card grids, background tints, icons, or multi-column feature blocks.
 
 ### Layout constraints
 
-- **Single centered column, `--max-width: 48rem` (~768px)**, applied
+- **Single centered column, `--max-width: 52rem` (~832px)**, applied
   identically to `.site-header`, `.site-main`, and `.site-footer`.
   `padding-inline: 1.5rem` on all three.
 - `.site-main` vertical padding: `3rem` top, `5rem` bottom.

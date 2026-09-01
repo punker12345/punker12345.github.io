@@ -5,7 +5,7 @@
    ========================================================================== */
 
 :root {
-  --max-width: 48rem;              /* ~768px content measure */
+  --max-width: 52rem;              /* ~832px content measure */
   --color-bg: #ffffff;
   --color-text: #1c1b1a;
   --color-muted: #605c58;
@@ -193,7 +193,7 @@ hr {
    separates it from the prose column. */
 .intro-aside {
   flex: 0 0 auto;
-  width: 170px;
+  width: 210px;
 }
 
 .intro-aside img {
