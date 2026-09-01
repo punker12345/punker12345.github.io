@@ -63,6 +63,19 @@ body {
   padding-block: 3rem 5rem;
 }
 
+/* ---- Banner ----------------------------------------------------------------
+   Full-bleed image strip above the header, on every page. Scales to the
+   viewport width; on wide screens the height is capped and the image is
+   cropped from the centre. */
+.site-banner {
+  display: block;
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  object-position: center;
+  border-bottom: 1px solid var(--color-border);
+}
+
 /* ---- Header / navigation ------------------------------------------------ */
 
 .site-header {
