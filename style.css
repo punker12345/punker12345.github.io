@@ -190,8 +190,8 @@ hr {
 }
 
 .intro img {
-  width: 140px;
-  height: 140px;
+  width: 170px;
+  height: 170px;
   object-fit: cover;
   border-radius: 2px;
   border: 1px solid var(--color-border);
@@ -221,6 +221,20 @@ hr {
 
 .entry-list .entry-title {
   font-weight: 600;
+}
+
+/* Numbered/bulleted list inside body copy (e.g. home-page research areas) */
+.prose-list {
+  margin: 0 0 1.15rem;
+  padding-left: 1.5rem;
+}
+
+.prose-list li {
+  margin-bottom: 0.5rem;
+}
+
+.prose-list li:last-child {
+  margin-bottom: 0;
 }
 
 /* ==========================================================================

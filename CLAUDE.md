@@ -19,7 +19,7 @@ City University of Hong Kong, working on AI governance and public policy.
 | File | Page |
 |------|------|
 | `index.html` | Home / About |
-| `research.html` | Research — publications + talks |
+| `research.html` | Publications — articles, books, presentations |
 | `teaching.html` | Teaching |
 | `cv.html` | CV (links `assets/cv.pdf`) |
 | `contact.html` | Contact |
@@ -85,28 +85,33 @@ card grids, background tints, icons, or multi-column feature blocks.
 
 ## Publications
 
-Live in `research.html`, grouped into `<h2>` sections — **Journal articles**,
-**Book chapters**, **Working papers** — each an `<ol class="pub-list">`.
-Entries are newest first within a section. "Selected talks" below them uses the
-lighter `.entry-list` pattern (title + `.meta` line), not `.pub-list`.
+Live in `research.html` under an `<h1>Publications</h1>` (no intro
+paragraphs), grouped into `<h2>` sections — **Journal articles**,
+**Book reviews**, **Edited books**, **Translated books** — each an
+`<ol class="pub-list">`. Entries are newest first within a section.
+**Presentations** below them uses the lighter `.entry-list` pattern
+(title + `.meta` line), not `.pub-list`.
 
 ### Citation format
 
-Chicago-style, bibliography form, as a single run of plain text inside
+Chicago-style, bibliography form, but with the author's name in natural
+order (`Tao Huang`, not `Huang, Tao`), as a single run of plain text inside
 `<span class="pub-cite">`. Journal and book titles go in `<em>`; article and
 chapter titles are in curly quotes (`&ldquo;` / `&rdquo;`), not italic.
 
 - **Journal article:**
-  `Huang, Tao. &ldquo;Article Title.&rdquo; <em>Journal Name</em> 12, no. 3 (2025): 145&ndash;198.`
+  `Tao Huang. &ldquo;Article Title.&rdquo; <em>Journal Name</em> 12, no. 3 (2025): 145&ndash;198.`
 - **Co-authored:**
-  `Huang, Tao, and Co-Author Name. &ldquo;Article Title.&rdquo; <em>Journal Name</em> 8, no. 1 (2024): 1&ndash;42.`
-- **Book chapter:**
-  `Huang, Tao. &ldquo;Chapter Title.&rdquo; In <em>Edited Volume Title</em>, edited by Editor Name, 130&ndash;152. City: University Press, 2025.`
+  `Tao Huang and Co-Author Name. &ldquo;Article Title.&rdquo; <em>Journal Name</em> 8, no. 1 (2024): 1&ndash;42.`
+- **Book chapter / edited volume:**
+  `Tao Huang. &ldquo;Chapter Title.&rdquo; In <em>Edited Volume Title</em>, edited by Editor Name, 130&ndash;152. City: University Press, 2025.`
 - **Working paper:**
-  `Huang, Tao. &ldquo;Paper Title.&rdquo; Working paper, 2026.`
+  `Tao Huang. &ldquo;Paper Title.&rdquo; Working paper, 2026.`
 
-Use `&ndash;` for page ranges. The author's own name is written out (`Huang,
-Tao.`) in every entry rather than replaced with a dash.
+Use `&ndash;` for page ranges. When only the volume and first page are known
+(common for law reviews cited Bluebook-style), `<em>Journal Name</em> 58
+(2025): 1325.` is fine. The author's own name is written out (`Tao Huang.`)
+in every entry rather than replaced with a dash.
 
 ### How to add a publication entry
 
@@ -115,18 +120,16 @@ Tao.`) in every entry rather than replaced with a dash.
 3. Replace the text in `<span class="pub-cite">` with the new citation, in the
    format above.
 4. In `<span class="pub-links">`, keep only the `<a>` links that apply and
-   delete the rest. The usual set, in this order: **SSRN**, **Journal**
-   (or **Publisher** for a book chapter), **PDF**. A working paper may instead
-   have a single `Draft available on request` link or none.
+   delete the rest. The usual set, in this order: **Journal** (or
+   **Publisher** for a book), then **PDF**.
 5. Put the block in date order (newest first) within its section.
 
 Skeleton:
 
 ```html
 <li class="pub">
-  <span class="pub-cite">Huang, Tao. &ldquo;Title.&rdquo; <em>Journal Name</em> 00, no. 0 (YEAR): 00&ndash;00.</span>
+  <span class="pub-cite">Tao Huang. &ldquo;Title.&rdquo; <em>Journal Name</em> 00, no. 0 (YEAR): 00&ndash;00.</span>
   <span class="pub-links">
-    <a href="URL">SSRN</a>
     <a href="URL">Journal</a>
     <a href="URL">PDF</a>
   </span>
