@@ -49,7 +49,9 @@ card grids, background tints, icons, or multi-column feature blocks.
   the contact table labels, and the footer.
 - Heading sizes: `h1` 1.95rem, `h2` 1.35rem (with `3rem` top margin), `h3`
   1.1rem. Heading `line-height: 1.25`.
-- `.lead` is the one intro paragraph per page: `1.25rem`, `line-height: 1.6`.
+- `.lead` is the larger intro paragraph used on most pages: `1.25rem`,
+  `line-height: 1.6`. The Home page is the exception — its three intro
+  paragraphs are all plain body size so they read as one block.
 
 ### Color
 
@@ -65,7 +67,7 @@ card grids, background tints, icons, or multi-column feature blocks.
 
 ### Layout constraints
 
-- **Single centered column, `--max-width: 43.75rem` (~700px)**, applied
+- **Single centered column, `--max-width: 48rem` (~768px)**, applied
   identically to `.site-header`, `.site-main`, and `.site-footer`.
   `padding-inline: 1.5rem` on all three.
 - `.site-main` vertical padding: `3rem` top, `5rem` bottom.

@@ -5,7 +5,7 @@
    ========================================================================== */
 
 :root {
-  --max-width: 43.75rem;            /* ~700px content measure */
+  --max-width: 48rem;              /* ~768px content measure */
   --color-bg: #ffffff;
   --color-text: #1c1b1a;
   --color-muted: #605c58;
