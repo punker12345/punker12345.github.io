@@ -58,13 +58,17 @@ image behind the header text on every page — see Layout constraints.)
 
 ### Color
 
-- **One accent color only:** deep maroon `--color-accent: #7a1f2b`
-  (hover `#571017`). Used for links, the `aria-current` nav underline, and the
-  focus outline on the skip link. Nothing else is colored.
-- Text `#1c1b1a`, muted `#605c58`, borders `#e6e3df`, background `#ffffff`.
-- A dark-mode palette is defined under `@media (prefers-color-scheme: dark)`
-  in `:root` — same structure, lighter maroon accent `#e08e99`. Keep both
-  palettes in sync when changing colors.
+- The whole palette is seven custom properties at the top of `style.css`;
+  swap those to re-skin the site. Current values: background
+  `--color-bg: #f7f7f5`, body text `--color-text: #2b2b2b`, secondary text
+  `--color-muted: #6b6b6b`, hairline `--color-border: #e6e3df`.
+- **One accent only:** slate blue `--color-accent: #3b5b7a` (hover
+  `--color-accent-hover: #2f4962`). Used for links and the skip-link focus
+  outline. `--color-accent-light: #9db3c8` is a lighter tint used only for
+  the `aria-current` nav underline, which sits on the dark banner.
+- There is a single light palette — no `prefers-color-scheme: dark` block.
+- The header keeps its own hardcoded colours (white text, dark scrim) because
+  it always sits on the dark banner image; those are not palette tokens.
 - Separation between sections is done with hairline `1px` borders in
   `--color-border`, never with fills or shadows.
 
